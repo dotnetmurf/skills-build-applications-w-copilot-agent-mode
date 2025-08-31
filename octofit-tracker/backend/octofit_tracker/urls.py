@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
 from rest_framework.routers import DefaultRouter
 from .views import UserViewSet, TeamViewSet, ActivityViewSet, WorkoutViewSet, LeaderboardViewSet
 from rest_framework.decorators import api_view
@@ -45,7 +46,8 @@ router.register(r'workouts', WorkoutViewSet)
 router.register(r'leaderboard', LeaderboardViewSet)
 
 urlpatterns = [
-    path('', api_root, name='api-root'),
-    path('', include(router.urls)),
+    path('', RedirectView.as_view(url='/api/', permanent=False)),
+    path('api/', api_root, name='api-root'),
+    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
 ]

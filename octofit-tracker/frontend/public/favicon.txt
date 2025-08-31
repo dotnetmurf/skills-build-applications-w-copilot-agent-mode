@@ -1,0 +1,1 @@
+// This file is a placeholder for the Octofit Tracker favicon. Please copy 'octofitapp-small.png' from the docs folder to the public folder and rename it to 'favicon.png' for best results.
