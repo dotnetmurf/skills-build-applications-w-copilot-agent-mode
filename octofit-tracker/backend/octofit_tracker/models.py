@@ -1,4 +1,4 @@
-from djongo import models
+from djongo import model
 from django.contrib.auth.models import AbstractUser
 
 class Team(models.Model):
